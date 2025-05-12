@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>최종 우승자</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='/style.css') }}">
+</head>
+<body>
+    <h1>당신의 이상형은 바로</h1>
+    {% if winner %}
+        <div class="winner-container">
+            <img src="{{ url_for('static', filename=winner['image']) }}" alt="{{ winner['name'] }}">
+            <p>{{ winner['name'] }}</p>
+        </div>
+    {% else %}
+        <p>우승자가 아직 결정되지 않았습니다.</p>
+    {% endif %}
+    
+    <a href="{{ url_for('start') }}" class="restart-btn">다시 시작하기</a>
+</body>
+</html>

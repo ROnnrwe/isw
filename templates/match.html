@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>일본 여자배우 이상형 월드컵ㅊㅇㅇ</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='/style.css') }}">
+</head>
+<body>
+    <h1>둘 중 한명을 고르세요</h1>
+    <form method="POST">
+        <button type="submit" name="winner" value="{{ left.name }}">
+            <img src="{{ url_for('static', filename=left.image) }}" alt="{{ left.name }}">
+            <div>{{ left.name }}</div>
+        </button>
+
+        <button type="submit" name="winner" value="{{ right.name }}">
+            <img src="{{ url_for('static', filename=right.image) }}" alt="{{ right.name }}">
+            <div>{{ right.name }}</div>
+        </button>
+    </form>
+</body>
+</html>
